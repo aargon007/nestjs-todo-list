@@ -10,10 +10,13 @@ import { TodosModule } from './todos/todos.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.MONGODB_URI || 'mongodb://localhost:27017/nestjs-todo'),
+    MongooseModule.forRoot(
+      process.env.MONGODB_URI || 'mongodb://localhost:27017/nestjs-todo',
+    ),
     TodosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+
+export class AppModule {}
